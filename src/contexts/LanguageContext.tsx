@@ -199,7 +199,7 @@ const translations = {
       section1Title: "Nuestra misión",
       section1Description: "En QuickHireCrew, nuestro objetivo es cerrar la brecha entre los contratistas de construcción y los trabajadores calificados, asegurando que los proyectos se completen de manera eficiente y exitosa. Proporcionamos una plataforma donde la calidad se une a la oportunidad.",
       section2Title: "Nuestra visión",
-      section2Description: "Convertirnos en la plataforma líder en dotación de personal de construcción, conocida por su confiabilidad, eficiencia e innovación. Visualizamos un futuro donde cada proyecto de construcción tenga acceso al mejor talento disponible.",
+      section2Description: "To become the leading platform in construction staffing, known for reliability, efficiency, and innovation. We envision a future where every construction project has access to the best talent available.",
       section3Title: "Nuestros valores",
       section3Description: "Integridad, transparencia y compromiso con la excelencia. Creemos en fomentar una comunidad basada en la confianza y el respeto mutuo.",
       teamTitle: "Conoce a nuestro equipo",
@@ -415,12 +415,14 @@ const translations = {
   }
 };
 
-// Create the Language Context
-const LanguageContext = createContext<{
+// Create the Language Context with proper type definitions
+interface LanguageContextType {
   language: string;
   t: (key: string, options?: { [key: string]: any }) => string;
   setLanguage: (lang: string) => void;
-}>({
+}
+
+const LanguageContext = createContext<LanguageContextType>({
   language: 'en',
   t: (key) => key,
   setLanguage: () => { },
@@ -454,9 +456,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setLanguage(lang);
   };
 
-  // Translation function
-  const t = (key: string, options?: { [key: string]: any }) => {
-    return i18next.t(key, options);
+  // Translation function with fixed return type
+  const t = (key: string, options?: { [key: string]: any }): string => {
+    const translated = i18next.t(key, options);
+    // Ensure we always return a string
+    return typeof translated === 'string' ? translated : String(translated);
   };
 
   return (
