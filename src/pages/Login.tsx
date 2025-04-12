@@ -1,9 +1,11 @@
 
 import LoginForm from "@/components/LoginForm";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Login = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     // Add a small delay before animation starts

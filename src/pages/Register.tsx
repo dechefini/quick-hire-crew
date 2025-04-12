@@ -1,9 +1,11 @@
 
 import RegisterForm from "@/components/RegisterForm";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Register = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     // Add a small delay before animation starts
