@@ -8,8 +8,11 @@ import TestimonialCard from "@/components/TestimonialCard";
 import { 
   Users, Award, Star, Building2, HardHat, Clock, Shield,
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+  
   return (
     <>
       <Hero />
@@ -20,17 +23,17 @@ const Index = () => {
             <StatCard 
               icon={<Users size={32} />}
               stat="10,000+"
-              description="Active Users"
+              description={t("home.activeUsers")}
             />
             <StatCard 
               icon={<Award size={32} />}
               stat="95%"
-              description="Success Rate"
+              description={t("home.successRate")}
             />
             <StatCard 
               icon={<Star size={32} />}
               stat="4.8/5"
-              description="User Rating"
+              description={t("home.userRating")}
             />
           </div>
         </div>
@@ -39,29 +42,29 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16">
-            Why Choose QuickHireCrew?
+            {t("home.whyChoose")}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
             <FeatureCard 
               icon={<Building2 size={24} />}
-              title="Connect with Top Companies"
-              description="Access opportunities with leading construction firms in your area"
+              title={t("home.connectTitle")}
+              description={t("home.connectDesc")}
             />
             <FeatureCard 
               icon={<HardHat size={24} />}
-              title="Skilled Workforce"
-              description="Find qualified contractors for your construction projects"
+              title={t("home.skilledTitle")}
+              description={t("home.skilledDesc")}
             />
             <FeatureCard 
               icon={<Clock size={24} />}
-              title="Quick Hiring"
-              description="Streamlined process to get workers on site faster"
+              title={t("home.quickTitle")}
+              description={t("home.quickDesc")}
             />
             <FeatureCard 
               icon={<Shield size={24} />}
-              title="Verified Profiles"
-              description="All contractors and companies are thoroughly vetted"
+              title={t("home.verifiedTitle")}
+              description={t("home.verifiedDesc")}
             />
           </div>
         </div>
@@ -70,7 +73,7 @@ const Index = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16">
-            What Our Users Say
+            {t("home.testimonials")}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -91,15 +94,15 @@ const Index = () => {
       <section className="py-16 light-blue-section">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Ready to Get Started?
+            {t("home.readyToStart")}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
-            Join thousands of construction professionals already using QuickHireCrew
+            {t("home.joinThousands")}
           </p>
           
           <Link to="/register">
             <Button className="bg-primary text-white px-8 py-6 text-lg rounded-md">
-              Sign Up Now
+              {t("home.signUpNow")}
             </Button>
           </Link>
         </div>

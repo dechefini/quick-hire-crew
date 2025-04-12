@@ -4,14 +4,16 @@ import {
   Search, MessageSquare, CreditCard, Shield, Clock, Users 
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Features = () => {
   const isMobile = useIsMobile();
+  const { t } = useLanguage();
 
   // Feature details for modal dialogs
   const featureDetails = {
     smartMatching: {
-      description: "Advanced algorithm to match workers with the right jobs based on skills and experience.",
+      description: t("features.smartMatchingDesc"),
       keyFeatures: [
         "Machine learning algorithms analyze past successful matches",
         "Real-time availability tracking and scheduling optimization",
@@ -21,7 +23,7 @@ const Features = () => {
       ]
     },
     instantMessaging: {
-      description: "Real-time communication between companies and workers for better coordination.",
+      description: t("features.messagingDesc"),
       keyFeatures: [
         "End-to-end encrypted messaging for security",
         "File sharing capabilities for documents and images",
@@ -31,7 +33,7 @@ const Features = () => {
       ]
     },
     securePayments: {
-      description: "Safe and reliable payment processing for all completed work.",
+      description: t("features.paymentsDesc"),
       keyFeatures: [
         "Multiple payment method support (Credit Cards, Bank Transfers)",
         "Automated timesheet and invoice generation",
@@ -41,7 +43,7 @@ const Features = () => {
       ]
     },
     verifiedProfiles: {
-      description: "All workers and companies are verified for safety and reliability.",
+      description: t("features.profilesDesc"),
       keyFeatures: [
         "Background check integration",
         "Skills certification verification",
@@ -51,7 +53,7 @@ const Features = () => {
       ]
     },
     quickHiring: {
-      description: "Streamlined process to hire temporary workers within hours.",
+      description: t("features.quickHiringDesc"),
       keyFeatures: [
         "One-click job posting with smart templates",
         "Automated candidate shortlisting",
@@ -61,7 +63,7 @@ const Features = () => {
       ]
     },
     teamManagement: {
-      description: "Easy tools to manage multiple workers and projects.",
+      description: t("features.teamManagementDesc"),
       keyFeatures: [
         "Real-time attendance tracking",
         "Performance analytics and reporting",
@@ -78,21 +80,21 @@ const Features = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-center mb-4 relative">
             <span className="relative">
-              Quick Hire Crew Features
+              {t("features.title")}
               <span className="absolute -bottom-2 left-0 right-0 h-1 bg-primary rounded-full transform scale-x-0 transition-transform duration-500 origin-left animate-in" style={{ animationDelay: "300ms", transform: "scaleX(1)" }}></span>
             </span>
           </h1>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16 animate-in fade-in duration-700" style={{ animationDelay: "400ms" }}>
-            Everything you need to manage temporary construction workforce
+            {t("features.subtitle")}
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="animate-in fade-in slide-in-from-bottom-3" style={{ animationDelay: "100ms" }}>
               <FeatureCard 
                 icon={<Search size={24} />}
-                title="Smart Matching"
-                description="Advanced algorithm to match workers with the right jobs based on skills and experience."
-                additionalText="Our AI-powered matching system considers location, skills, experience, and availability to ensure the perfect fit for every job."
+                title={t("features.smartMatching")}
+                description={t("features.smartMatchingDesc")}
+                additionalText={t("features.smartMatchingAdd")}
                 details={featureDetails.smartMatching}
               />
             </div>
@@ -100,9 +102,9 @@ const Features = () => {
             <div className="animate-in fade-in slide-in-from-bottom-3" style={{ animationDelay: "200ms" }}>
               <FeatureCard 
                 icon={<MessageSquare size={24} />}
-                title="Instant Messaging"
-                description="Real-time communication between companies and workers for better coordination."
-                additionalText="Built-in chat system with read receipts, file sharing, and automatic notifications to keep everyone in sync."
+                title={t("features.messaging")}
+                description={t("features.messagingDesc")}
+                additionalText={t("features.messagingAdd")}
                 details={featureDetails.instantMessaging}
               />
             </div>
@@ -110,9 +112,9 @@ const Features = () => {
             <div className="animate-in fade-in slide-in-from-bottom-3" style={{ animationDelay: "300ms" }}>
               <FeatureCard 
                 icon={<CreditCard size={24} />}
-                title="Secure Payments"
-                description="Safe and reliable payment processing for all completed work."
-                additionalText="Protected by industry-standard encryption with automated invoicing and payment tracking."
+                title={t("features.payments")}
+                description={t("features.paymentsDesc")}
+                additionalText={t("features.paymentsAdd")}
                 details={featureDetails.securePayments}
               />
             </div>
@@ -122,9 +124,9 @@ const Features = () => {
             <div className="animate-in fade-in slide-in-from-bottom-3" style={{ animationDelay: "400ms" }}>
               <FeatureCard 
                 icon={<Shield size={24} />}
-                title="Verified Profiles"
-                description="All workers and companies are verified for safety and reliability."
-                additionalText="Multi-step verification process including document checks and reference verification for peace of mind."
+                title={t("features.profiles")}
+                description={t("features.profilesDesc")}
+                additionalText={t("features.profilesAdd")}
                 details={featureDetails.verifiedProfiles}
               />
             </div>
@@ -132,9 +134,9 @@ const Features = () => {
             <div className="animate-in fade-in slide-in-from-bottom-3" style={{ animationDelay: "500ms" }}>
               <FeatureCard 
                 icon={<Clock size={24} />}
-                title="Quick Hiring"
-                description="Streamlined process to hire temporary workers within hours."
-                additionalText="Reduce hiring time from weeks to hours with our optimized workflows and instant matching."
+                title={t("features.quickHiring")}
+                description={t("features.quickHiringDesc")}
+                additionalText={t("features.quickHiringAdd")}
                 details={featureDetails.quickHiring}
               />
             </div>
@@ -142,9 +144,9 @@ const Features = () => {
             <div className="animate-in fade-in slide-in-from-bottom-3" style={{ animationDelay: "600ms" }}>
               <FeatureCard 
                 icon={<Users size={24} />}
-                title="Team Management"
-                description="Easy tools to manage multiple workers and projects."
-                additionalText="Comprehensive dashboard for tracking attendance, performance, and project progress in real-time."
+                title={t("features.teamManagement")}
+                description={t("features.teamManagementDesc")}
+                additionalText={t("features.teamManagementAdd")}
                 details={featureDetails.teamManagement}
               />
             </div>
