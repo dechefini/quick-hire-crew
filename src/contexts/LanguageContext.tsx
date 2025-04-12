@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 type LanguageType = "english" | "spanish";
@@ -96,16 +95,28 @@ const translations = {
     
     // Login/Register
     "auth.email": "Email",
+    "auth.emailOrUsername": "Email or Username",
+    "auth.enterEmailOrUsername": "Enter your email or username",
     "auth.password": "Password",
     "auth.confirmPassword": "Confirm Password",
     "auth.fullName": "Full Name",
-    "auth.login": "Login",
+    "auth.username": "Username",
+    "auth.phoneNumber": "Phone Number",
+    "auth.login": "Sign In",
     "auth.register": "Register",
     "auth.forgotPassword": "Forgot Password?",
     "auth.noAccount": "Don't have an account?",
     "auth.haveAccount": "Already have an account?",
     "auth.registerNow": "Register Now",
-    "auth.loginNow": "Login Now",
+    "auth.loginNow": "Sign in",
+    "auth.welcomeBack": "Welcome back to Quick Hire Crew",
+    "auth.createAccount": "Create Account",
+    "auth.signUpToStart": "Sign up to get started",
+    "auth.accountType": "Account Type",
+    "auth.contractor": "Contractor",
+    "auth.company": "Company",
+    "auth.registerAccount": "Register Account",
+    "auth.backToHome": "Back to Home",
     
     // 404 Page
     "notFound.title": "404",
@@ -198,16 +209,28 @@ const translations = {
     
     // Login/Register
     "auth.email": "Correo Electrónico",
+    "auth.emailOrUsername": "Correo o Nombre de Usuario",
+    "auth.enterEmailOrUsername": "Ingresa tu correo o nombre de usuario",
     "auth.password": "Contraseña",
     "auth.confirmPassword": "Confirmar Contraseña",
     "auth.fullName": "Nombre Completo",
+    "auth.username": "Nombre de Usuario",
+    "auth.phoneNumber": "Número de Teléfono",
     "auth.login": "Iniciar Sesión",
     "auth.register": "Registrarse",
     "auth.forgotPassword": "¿Olvidaste tu Contraseña?",
     "auth.noAccount": "¿No tienes una cuenta?",
     "auth.haveAccount": "¿Ya tienes una cuenta?",
     "auth.registerNow": "Regístrate Ahora",
-    "auth.loginNow": "Inicia Sesión Ahora",
+    "auth.loginNow": "Inicia Sesión",
+    "auth.welcomeBack": "Bienvenido de nuevo a Quick Hire Crew",
+    "auth.createAccount": "Crear Cuenta",
+    "auth.signUpToStart": "Regístrate para comenzar",
+    "auth.accountType": "Tipo de Cuenta",
+    "auth.contractor": "Contratista",
+    "auth.company": "Empresa",
+    "auth.registerAccount": "Registrar Cuenta",
+    "auth.backToHome": "Volver al Inicio",
     
     // 404 Page
     "notFound.title": "404",

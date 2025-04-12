@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Register = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { language } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Add a small delay before animation starts
