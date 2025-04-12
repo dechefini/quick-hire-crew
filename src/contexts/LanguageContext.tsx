@@ -12,6 +12,13 @@ interface Translation {
 
 const translations = {
   en: {
+    nav: {
+      about: "About",
+      features: "Features",
+      contact: "Contact",
+      login: "Login",
+      register: "Register"
+    },
     auth: {
       login: "Login",
       register: "Register",
@@ -44,21 +51,22 @@ const translations = {
       heroSubtitle: "Connecting contractors with skilled workers for successful projects.",
       getStarted: "Get Started",
       learnMore: "Learn More",
-      featuresTitle: "Why Choose QuickHireCrew?",
-      feature1Title: "Vetted Professionals",
-      feature1Description: "Access a network of skilled and reliable contractors.",
-      feature2Title: "Efficient Matching",
-      feature2Description: "Quickly find the right workers for your specific project needs.",
-      feature3Title: "Secure Payments",
-      feature3Description: "Ensure smooth and secure transactions for all parties.",
-      testimonialsTitle: "What Our Users Say",
-      testimonial1Text: "QuickHireCrew has revolutionized how we find skilled labor. Highly recommended!",
-      testimonial1Author: "John Doe, Construction Manager",
-      testimonial2Text: "As a contractor, I've found consistent work and reliable payments through this platform.",
-      testimonial2Author: "Alice Smith, Carpenter",
-      ctaTitle: "Ready to Build Something Great?",
-      ctaDescription: "Join QuickHireCrew today and experience the future of construction staffing.",
-      ctaButton: "Sign Up Now"
+      whyChoose: "Why Choose QuickHireCrew?",
+      connectTitle: "Connect with Professionals",
+      connectDesc: "Access a network of skilled and reliable contractors.",
+      skilledTitle: "Skilled Workers",
+      skilledDesc: "Quickly find the right workers for your specific project needs.",
+      quickTitle: "Quick Matching",
+      quickDesc: "Our algorithm ensures you find the perfect match for your requirements.",
+      verifiedTitle: "Verified Profiles",
+      verifiedDesc: "All professionals are verified for quality and reliability.",
+      testimonials: "What Our Users Say",
+      readyToStart: "Ready to Build Something Great?",
+      joinThousands: "Join thousands of contractors and workers on QuickHireCrew today.",
+      signUpNow: "Sign Up Now",
+      activeUsers: "Active Users",
+      successRate: "Success Rate",
+      userRating: "User Rating"
     },
     about: {
       title: "About QuickHireCrew",
@@ -146,6 +154,13 @@ const translations = {
     }
   },
   es: {
+    nav: {
+      about: "Nosotros",
+      features: "Características",
+      contact: "Contacto",
+      login: "Iniciar Sesión",
+      register: "Registrarse"
+    },
     auth: {
       login: "Iniciar sesión",
       register: "Registrarse",
@@ -178,21 +193,22 @@ const translations = {
       heroSubtitle: "Conectando a los contratistas con trabajadores calificados para proyectos exitosos.",
       getStarted: "Empezar",
       learnMore: "Aprender más",
-      featuresTitle: "¿Por qué elegir QuickHireCrew?",
-      feature1Title: "Profesionales examinados",
-      feature1Description: "Acceda a una red de contratistas capacitados y confiables.",
-      feature2Title: "Coincidencia eficiente",
-      feature2Description: "Encuentre rápidamente a los trabajadores adecuados para las necesidades específicas de su proyecto.",
-      feature3Title: "Pagos seguros",
-      feature3Description: "Garantice transacciones fluidas y seguras para todas las partes.",
-      testimonialsTitle: "Lo que dicen nuestros usuarios",
-      testimonial1Text: "QuickHireCrew ha revolucionado la forma en que encontramos mano de obra calificada. ¡Muy recomendado!",
-      testimonial1Author: "John Doe, Gerente de Construcción",
-      testimonial2Text: "Como contratista, he encontrado trabajo constante y pagos confiables a través de esta plataforma.",
-      testimonial2Author: "Alice Smith, Carpintera",
-      ctaTitle: "¿Listo para construir algo grandioso?",
-      ctaDescription: "Únase a QuickHireCrew hoy y experimente el futuro de la dotación de personal de construcción.",
-      ctaButton: "Regístrate ahora"
+      whyChoose: "¿Por qué elegir QuickHireCrew?",
+      connectTitle: "Conecta con profesionales",
+      connectDesc: "Accede a una red de contratistas capacitados y fiables.",
+      skilledTitle: "Trabajadores calificados",
+      skilledDesc: "Encuentra rápidamente a los trabajadores adecuados para las necesidades específicas de su proyecto.",
+      quickTitle: "Coincidencia eficiente",
+      quickDesc: "Nuestro algoritmo garantiza que encuentre la combinación perfecta para los requisitos de su proyecto.",
+      verifiedTitle: "Perfiles verificados",
+      verifiedDesc: "Todos los profesionales están verificados por calidad y confiabilidad.",
+      testimonials: "Lo que dicen nuestros usuarios",
+      readyToStart: "¿Listo para construir algo grandioso?",
+      joinThousands: "Únase a miles de contratistas y trabajadores en QuickHireCrew hoy.",
+      signUpNow: "Regístrate ahora",
+      activeUsers: "Usuarios Activos",
+      successRate: "Tasa de éxito",
+      userRating: "Calificación del Usuario"
     },
     about: {
       title: "Acerca de QuickHireCrew",
@@ -280,6 +296,13 @@ const translations = {
     }
   },
   fr: {
+    nav: {
+      about: "À Propos",
+      features: "Fonctionnalités",
+      contact: "Contact",
+      login: "Connexion",
+      register: "S'inscrire"
+    },
     auth: {
       login: "Connexion",
       register: "S'inscrire",
@@ -312,21 +335,22 @@ const translations = {
       heroSubtitle: "Mettre en relation les entrepreneurs avec des travailleurs qualifiés pour des projets réussis.",
       getStarted: "Commencer",
       learnMore: "En savoir plus",
-      featuresTitle: "Pourquoi choisir QuickHireCrew?",
-      feature1Title: "Professionnels vérifiés",
-      feature1Description: "Accédez à un réseau d'entrepreneurs qualifiés et fiables.",
-      feature2Title: "Correspondance efficace",
-      feature2Description: "Trouvez rapidement les bons travailleurs pour les besoins spécifiques de votre projet.",
-      feature3Title: "Paiements sécurisés",
-      feature3Description: "Assurez des transactions fluides et sécurisées pour toutes les parties.",
-      testimonialsTitle: "Ce que disent nos utilisateurs",
-      testimonial1Text: "QuickHireCrew a révolutionné notre façon de trouver de la main-d'œuvre qualifiée. Hautement recommandé!",
-      testimonial1Author: "John Doe, Chef de chantier",
-      testimonial2Text: "En tant qu'entrepreneur, j'ai trouvé un travail constant et des paiements fiables grâce à cette plateforme.",
-      testimonial2Author: "Alice Smith, Charpentière",
-      ctaTitle: "Prêt à construire quelque chose de grand?",
-      ctaDescription: "Rejoignez QuickHireCrew dès aujourd'hui et découvrez l'avenir de la dotation en personnel de construction.",
-      ctaButton: "Inscrivez-vous maintenant"
+      whyChoose: "Pourquoi choisir QuickHireCrew?",
+      connectTitle: "Connectez-vous avec des professionnels",
+      connectDesc: "Accédez à un réseau de professionnels qualifiés et fiables.",
+      skilledTitle: "Travailleurs qualifiés",
+      skilledDesc: "Trouvez rapidement les bons travailleurs pour les besoins spécifiques de votre projet.",
+      quickTitle: "Correspondance rapide",
+      quickDesc: "Notre algorithme vous garantit de trouver la combinaison parfaite pour vos besoins.",
+      verifiedTitle: "Profils vérifiés",
+      verifiedDesc: "Tous les professionnels sont vérifiés pour qualité et fiabilité.",
+      testimonials: "Ce que disent nos utilisateurs",
+      readyToStart: "Prêt à construire quelque chose de grand?",
+      joinThousands: "Rejoignez des milliers de professionnels et travailleurs sur QuickHireCrew aujourd'hui.",
+      signUpNow: "Inscrivez-vous maintenant",
+      activeUsers: "Utilisateurs Actifs",
+      successRate: "Taux de succès",
+      userRating: "Note de l'utilisateur"
     },
     about: {
       title: "À propos de QuickHireCrew",
@@ -447,6 +471,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         interpolation: {
           escapeValue: false,
         },
+        debug: false
       });
   }, [language]);
 
