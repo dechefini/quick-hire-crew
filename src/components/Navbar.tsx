@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   const handleLanguageChange = (value: string) => {
-    setLanguage(value as "english" | "spanish");
+    setLanguage(value);
   };
 
   return (
@@ -59,8 +59,9 @@ const Navbar = () => {
               </div>
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="english">EN</SelectItem>
-              <SelectItem value="spanish">ES</SelectItem>
+              <SelectItem value="en">EN</SelectItem>
+              <SelectItem value="es">ES</SelectItem>
+              <SelectItem value="fr">FR</SelectItem>
             </SelectContent>
           </Select>
           <Link to="/register">
@@ -123,8 +124,9 @@ const Navbar = () => {
                   </div>
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="english">English</SelectItem>
-                  <SelectItem value="spanish">Español</SelectItem>
+                  <SelectItem value="en">English</SelectItem>
+                  <SelectItem value="es">Español</SelectItem>
+                  <SelectItem value="fr">Français</SelectItem>
                 </SelectContent>
               </Select>
             </div>
