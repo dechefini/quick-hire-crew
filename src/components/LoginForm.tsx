@@ -1,12 +1,44 @@
 
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { UserIcon, Lock, LogIn, HomeIcon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useToast } from "@/hooks/use-toast";
 
 const LoginForm = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    // Mock login - in a real app, this would validate against a backend
+    setTimeout(() => {
+      setIsLoading(false);
+      if (email && password) {
+        toast({
+          title: t("auth.loginSuccess"),
+          description: t("auth.redirecting"),
+        });
+        
+        // Redirect to dashboard after successful login
+        navigate("/dashboard");
+      } else {
+        toast({
+          title: t("auth.loginError"),
+          description: t("auth.pleaseEnterCredentials"),
+          variant: "destructive",
+        });
+      }
+    }, 1000);
+  };
   
   return (
     <div className="bg-white rounded-lg shadow-md max-w-md w-full mx-auto p-8">
@@ -19,7 +51,7 @@ const LoginForm = () => {
       <h1 className="text-2xl font-bold text-center mb-2">{t("auth.login")}</h1>
       <p className="text-gray-500 text-center mb-6">{t("auth.welcomeBack")}</p>
       
-      <div className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
             {t("auth.emailOrUsername")}
@@ -30,6 +62,8 @@ const LoginForm = () => {
               id="email" 
               placeholder={t("auth.enterEmailOrUsername")} 
               className="pl-10 bg-blue-50 border-0"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
         </div>
@@ -50,15 +84,26 @@ const LoginForm = () => {
               type="password" 
               placeholder="••••••••••"
               className="pl-10 bg-blue-50 border-0"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
         </div>
         
-        <Button className="w-full py-6 bg-primary text-white">
-          <LogIn size={18} className="mr-2" />
-          {t("auth.login")}
+        <Button type="submit" className="w-full py-6 bg-primary text-white" disabled={isLoading}>
+          {isLoading ? (
+            <div className="flex items-center">
+              <div className="animate-spin mr-2 h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
+              {t("auth.loggingIn")}
+            </div>
+          ) : (
+            <>
+              <LogIn size={18} className="mr-2" />
+              {t("auth.login")}
+            </>
+          )}
         </Button>
-      </div>
+      </form>
       
       <div className="mt-6 text-center">
         <p className="text-gray-600">
