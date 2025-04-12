@@ -16,7 +16,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -40,13 +40,13 @@ const Navbar = () => {
         
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <Link to="/about" className="text-base hover:text-primary">
-            {t("nav.about")}
+            About
           </Link>
           <Link to="/features" className="text-base hover:text-primary">
-            {t("nav.features")}
+            Features
           </Link>
           <Link to="/contact" className="text-base hover:text-primary">
-            {t("nav.contact")}
+            Contact
           </Link>
           <Select 
             defaultValue={language} 
@@ -61,17 +61,16 @@ const Navbar = () => {
             <SelectContent>
               <SelectItem value="en">EN</SelectItem>
               <SelectItem value="es">ES</SelectItem>
-              <SelectItem value="fr">FR</SelectItem>
             </SelectContent>
           </Select>
           <Link to="/register">
             <Button variant="outline" className="rounded-md">
-              {t("nav.register")}
+              Register
             </Button>
           </Link>
           <Link to="/login">
             <Button className="rounded-md bg-primary text-white">
-              {t("nav.login")}
+              Login
             </Button>
           </Link>
         </div>
@@ -96,21 +95,21 @@ const Navbar = () => {
               className="text-base hover:text-primary py-2 border-b"
               onClick={() => setIsMenuOpen(false)}
             >
-              {t("nav.about")}
+              About
             </Link>
             <Link 
               to="/features" 
               className="text-base hover:text-primary py-2 border-b"
               onClick={() => setIsMenuOpen(false)}
             >
-              {t("nav.features")}
+              Features
             </Link>
             <Link 
               to="/contact" 
               className="text-base hover:text-primary py-2 border-b"
               onClick={() => setIsMenuOpen(false)}
             >
-              {t("nav.contact")}
+              Contact
             </Link>
             <div className="py-2 border-b">
               <Select 
@@ -126,7 +125,6 @@ const Navbar = () => {
                 <SelectContent>
                   <SelectItem value="en">English</SelectItem>
                   <SelectItem value="es">Español</SelectItem>
-                  <SelectItem value="fr">Français</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -137,7 +135,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Button variant="outline" className="rounded-md w-full">
-                  {t("nav.register")}
+                  Register
                 </Button>
               </Link>
               <Link 
@@ -146,7 +144,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Button className="rounded-md bg-primary text-white w-full">
-                  {t("nav.login")}
+                  Login
                 </Button>
               </Link>
             </div>
