@@ -15,7 +15,12 @@ import {
   Menu,
   User,
   ChevronRight,
-  Search
+  Search,
+  MessageSquare,
+  Briefcase,
+  CreditCard,
+  Settings,
+  LayoutDashboard
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -146,5 +151,3 @@ export const TopBar = () => {
     </header>
   );
 };
-
-import { LayoutDashboard } from "lucide-react";
