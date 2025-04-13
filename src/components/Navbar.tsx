@@ -16,14 +16,14 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const handleLanguageChange = (value: string) => {
-    setLanguage(value);
+    setLanguage(value as "english" | "spanish");
   };
 
   return (
@@ -40,13 +40,13 @@ const Navbar = () => {
         
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <Link to="/about" className="text-base hover:text-primary">
-            About
+            {t("nav.about")}
           </Link>
           <Link to="/features" className="text-base hover:text-primary">
-            Features
+            {t("nav.features")}
           </Link>
           <Link to="/contact" className="text-base hover:text-primary">
-            Contact
+            {t("nav.contact")}
           </Link>
           <Select 
             defaultValue={language} 
@@ -59,18 +59,18 @@ const Navbar = () => {
               </div>
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="en">EN</SelectItem>
-              <SelectItem value="es">ES</SelectItem>
+              <SelectItem value="english">EN</SelectItem>
+              <SelectItem value="spanish">ES</SelectItem>
             </SelectContent>
           </Select>
           <Link to="/register">
             <Button variant="outline" className="rounded-md">
-              Register
+              {t("nav.register")}
             </Button>
           </Link>
           <Link to="/login">
             <Button className="rounded-md bg-primary text-white">
-              Login
+              {t("nav.login")}
             </Button>
           </Link>
         </div>
@@ -95,21 +95,21 @@ const Navbar = () => {
               className="text-base hover:text-primary py-2 border-b"
               onClick={() => setIsMenuOpen(false)}
             >
-              About
+              {t("nav.about")}
             </Link>
             <Link 
               to="/features" 
               className="text-base hover:text-primary py-2 border-b"
               onClick={() => setIsMenuOpen(false)}
             >
-              Features
+              {t("nav.features")}
             </Link>
             <Link 
               to="/contact" 
               className="text-base hover:text-primary py-2 border-b"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              {t("nav.contact")}
             </Link>
             <div className="py-2 border-b">
               <Select 
@@ -123,8 +123,8 @@ const Navbar = () => {
                   </div>
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="en">English</SelectItem>
-                  <SelectItem value="es">Español</SelectItem>
+                  <SelectItem value="english">English</SelectItem>
+                  <SelectItem value="spanish">Español</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -135,7 +135,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Button variant="outline" className="rounded-md w-full">
-                  Register
+                  {t("nav.register")}
                 </Button>
               </Link>
               <Link 
@@ -144,7 +144,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Button className="rounded-md bg-primary text-white w-full">
-                  Login
+                  {t("nav.login")}
                 </Button>
               </Link>
             </div>
