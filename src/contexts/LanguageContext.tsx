@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 type LanguageType = "english" | "spanish";
@@ -6,7 +7,7 @@ interface LanguageContextType {
   language: LanguageType;
   setLanguage: (language: LanguageType) => void;
   translations: Record<string, Record<string, string>>;
-  t: (key: string) => string;
+  t: (key: string, params?: Record<string, string>) => string;
 }
 
 const translations = {
@@ -42,6 +43,31 @@ const translations = {
     "home.activeUsers": "Active Users",
     "home.successRate": "Success Rate",
     "home.userRating": "User Rating",
+    
+    // Dashboard
+    "dashboard.welcomeBack": "Welcome back, {name}!",
+    "dashboard.jobSearchProgress": "Here's your job search progress overview",
+    "dashboard.findJobs": "Find Jobs",
+    "dashboard.myProfile": "My Profile",
+    "dashboard.totalApplications": "Total Applications",
+    "dashboard.jobsApplied": "Jobs you've applied to",
+    "dashboard.acceptedJobs": "Accepted Jobs",
+    "dashboard.successfullyLanded": "Successfully landed positions",
+    "dashboard.weeklyEarning": "Weekly Earning Potential",
+    "dashboard.basedOn40hr": "Based on 40hr work week",
+    "dashboard.matchScore": "Match Score",
+    "dashboard.acceptanceRate": "Job acceptance rate",
+    "dashboard.activeApplications": "Active Applications",
+    "dashboard.availableJobs": "Available Jobs",
+    "dashboard.recentActivity": "Recent Activity",
+    
+    // Dashboard Sidebar
+    "dashboard.sidebar.dashboard": "Dashboard",
+    "dashboard.sidebar.messages": "Messages",
+    "dashboard.sidebar.profile": "Profile",
+    "dashboard.sidebar.availableJobs": "Available Jobs",
+    "dashboard.sidebar.payments": "Payments",
+    "dashboard.sidebar.settings": "Settings",
     
     // About Page
     "about.title": "About Quick Hire Crew",
@@ -138,6 +164,31 @@ const translations = {
     "hero.language": "Idioma:",
     "hero.needWork": "Necesito Trabajo",
     "hero.needHire": "Necesito Contratar",
+    
+    // Dashboard
+    "dashboard.welcomeBack": "¡Bienvenido de nuevo, {name}!",
+    "dashboard.jobSearchProgress": "Aquí está el resumen del progreso de tu búsqueda de trabajo",
+    "dashboard.findJobs": "Buscar Trabajos",
+    "dashboard.myProfile": "Mi Perfil",
+    "dashboard.totalApplications": "Total de Solicitudes",
+    "dashboard.jobsApplied": "Trabajos a los que has aplicado",
+    "dashboard.acceptedJobs": "Trabajos Aceptados",
+    "dashboard.successfullyLanded": "Posiciones obtenidas exitosamente",
+    "dashboard.weeklyEarning": "Potencial de Ingresos Semanal",
+    "dashboard.basedOn40hr": "Basado en semana laboral de 40 horas",
+    "dashboard.matchScore": "Puntuación de Coincidencia",
+    "dashboard.acceptanceRate": "Tasa de aceptación de trabajos",
+    "dashboard.activeApplications": "Solicitudes Activas",
+    "dashboard.availableJobs": "Trabajos Disponibles",
+    "dashboard.recentActivity": "Actividad Reciente",
+    
+    // Dashboard Sidebar
+    "dashboard.sidebar.dashboard": "Panel Principal",
+    "dashboard.sidebar.messages": "Mensajes",
+    "dashboard.sidebar.profile": "Perfil",
+    "dashboard.sidebar.availableJobs": "Trabajos Disponibles",
+    "dashboard.sidebar.payments": "Pagos",
+    "dashboard.sidebar.settings": "Configuración",
     
     // Home Page
     "home.whyChoose": "¿Por qué elegir QuickHireCrew?",
@@ -254,9 +305,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return (storedLanguage as LanguageType) || "english";
   });
 
-  // Translate function
-  const t = (key: string): string => {
-    return translations[language][key] || key;
+  // Translate function with parameter support
+  const t = (key: string, params?: Record<string, string>): string => {
+    let text = translations[language][key] || key;
+    
+    // Replace parameters in the text if any
+    if (params) {
+      Object.entries(params).forEach(([param, value]) => {
+        text = text.replace(`{${param}}`, value);
+      });
+    }
+    
+    return text;
   };
 
   // Update language and store in localStorage

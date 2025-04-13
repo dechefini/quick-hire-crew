@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Features from "./pages/Features";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ContractorDashboard from "./pages/ContractorDashboard";
 
 const queryClient = new QueryClient();
 
@@ -26,21 +27,96 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/features" element={<Features />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
+          <Routes>
+            <Route
+              path="/contractor/dashboard"
+              element={<ContractorDashboard />}
+            />
+            <Route
+              path="/"
+              element={
+                <div className="flex flex-col min-h-screen">
+                  <Navbar />
+                  <main className="flex-grow">
+                    <Index />
+                  </main>
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <div className="flex flex-col min-h-screen">
+                  <Navbar />
+                  <main className="flex-grow">
+                    <Register />
+                  </main>
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <div className="flex flex-col min-h-screen">
+                  <Navbar />
+                  <main className="flex-grow">
+                    <Login />
+                  </main>
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <div className="flex flex-col min-h-screen">
+                  <Navbar />
+                  <main className="flex-grow">
+                    <About />
+                  </main>
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/features"
+              element={
+                <div className="flex flex-col min-h-screen">
+                  <Navbar />
+                  <main className="flex-grow">
+                    <Features />
+                  </main>
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <div className="flex flex-col min-h-screen">
+                  <Navbar />
+                  <main className="flex-grow">
+                    <Contact />
+                  </main>
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <div className="flex flex-col min-h-screen">
+                  <Navbar />
+                  <main className="flex-grow">
+                    <NotFound />
+                  </main>
+                  <Footer />
+                </div>
+              }
+            />
+          </Routes>
         </BrowserRouter>
       </LanguageProvider>
     </TooltipProvider>
